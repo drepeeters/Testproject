@@ -1,5 +1,4 @@
-name: CI
-
+name: Prevent removal of member
 on:
   push:
     branches: [ "main" ]
