@@ -22,7 +22,7 @@ jobs:
         
       - name: List all changed members
         run: |
-          for member in ${{ steps.changed-members.outputs.all_changed_files }};
+          for member in ${{ steps.changed-members.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
 
