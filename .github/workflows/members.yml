@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test changed-members
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      # Function 1
+      - name: get changed members
+        id: changed-members
+        uses: tj-actions/changed-files@v34
+        
+      - name: List all changed members
+        run: |
+          for member in ${{ steps.changed-members.outputs.all_changed_files }};
+            echo "$file was changed"
+          done
+
