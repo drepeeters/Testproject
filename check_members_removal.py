@@ -11,7 +11,7 @@ for members in members_dir.glob('*.md'):
   
 
 previous_members = []
-with open("day1.txt", 'r') as f:
+with open("members_cache.txt", 'r') as f:
     for line in f:
         previous_members.append(line.rstrip('\n'))
     print("Previous list of members is loaded")
