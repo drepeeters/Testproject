@@ -19,5 +19,5 @@ with open("day1.txt", 'r') as f:
  
 
 print(members_list)
-print(previos_members)
+print(previous_members)
 
