@@ -8,7 +8,8 @@ for members in members_dir.glob('*.md'):
   members_list.append(str(members).split('/')[1])
   
 print(members_list)
+print(members_dir.home())
 
-with open('members_cache.txt', 'w') as f:
-    for member in members_list:
-        f.write("%s\n" % member)
+#with open('members_cache.txt', 'w') as f:
+ #   for member in members_list:
+  #      f.write("%s\n" % member)
