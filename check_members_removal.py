@@ -6,7 +6,7 @@ members_dir = pathlib.Path("./contents")
 current_members = []
 for members in members_dir.glob('*.md'):
   current_members.append(str(members).split('/')[1])
-  print("Loaded all the members currently in contents")
+print("Loaded all the members currently in contents")
   
   
 previous_members = []
