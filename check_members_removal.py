@@ -2,5 +2,7 @@ import pathlib
 
 members_dir = pathlib.Path("./content")
 
-for member in members_dir.glob('*.md'):
-    print(member)
+with open('members.txt', 'w') as fp:
+    for member in members_dir.glob('*.md'):
+        fp.write(member)
+        fp.write('\n')
