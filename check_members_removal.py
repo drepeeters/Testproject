@@ -1,4 +1,5 @@
 import pathlib
+import os
 
 members_dir = pathlib.Path("./contents")
 
@@ -10,6 +11,7 @@ for members in members_dir.glob('*.md'):
 print(members_list)
 print(members_dir.absolute())
 
-#with open('members_cache.txt', 'w') as f:
- #   for member in members_list:
-  #      f.write("%s\n" % member)
+with open(os.path.join(str(members_dir.absolute()).rsplit('/', 1)[0], 'members_cache.txt'), 'w') as f:
+    for member in members_list:
+        print(member)
+        f.write("%s\n" % member)
