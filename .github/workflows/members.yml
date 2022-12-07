@@ -19,15 +19,14 @@ jobs:
       # Function 1
       - name: get changed members
         id: changed-members
-        # uses: tj-actions/changed-files@v34
-        uses: jitterbit/get-changed-files@v1
+        uses: tj-actions/changed-files@v34
         with:
           commit_message: Update members
           file_pattern: contents/*
         
       - name: List all removed members
         run: |
-          for member in ${{ steps.changed-members.outputs.removed }}; do
+          for member in ${{ steps.changed-members.outputs.deleted_files }}; do
             echo "$member was removed"
           done
 
