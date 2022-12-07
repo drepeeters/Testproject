@@ -17,28 +17,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          
-     # - name: Compare members
-      #  run: python ./check_members_removal.py
-        
-          
+
       # Function 1
-      - name: get changed members
-        id: changed-members
-        uses: tj-actions/changed-files@v34
-        with:
-          commit_message: Update members
-          file_pattern: contents/*
-          json: "true"
-        
-      - name: List all removed members
-        run: |
-          for member in ${{ steps.changed-members.outputs.deleted_files }}; do
-            echo "$member was removed"
-          done
-          
-      
-      # Function 2
       - name: Compare members
         run: python ./check_members_removal.py
 
