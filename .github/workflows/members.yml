@@ -18,8 +18,8 @@ jobs:
         with:
           fetch-depth: 0
           
-      - name: Compare members
-        run: python ./check_members_removal.py
+     # - name: Compare members
+      #  run: python ./check_members_removal.py
         
           
       # Function 1
@@ -36,4 +36,9 @@ jobs:
           for member in ${{ steps.changed-members.outputs.deleted_files }}; do
             echo "$member was removed"
           done
+          
+      
+      # Function 2
+      - name: Compare members
+        run: python ./check_members_removal.py
 
