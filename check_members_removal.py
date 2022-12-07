@@ -11,7 +11,12 @@ for members in members_dir.glob('*.md'):
 print(members_list)
 print(members_dir.absolute())
 
-with open(os.path.join(str(members_dir.absolute()).rsplit('/', 1)[0], 'members_cache.txt'), 'w') as f:
+with open("day1.txt", 'w') as f:
     for member in members_list:
         print(member)
-        f.write("%s\n" % member)
+        f.write(f"{member}\n")
+
+#with open(os.path.join(str(members_dir.absolute()).rsplit('/', 1)[0], 'members_cache.txt'), 'w') as f:
+    #for member in members_list:
+        #print(member)
+        #f.write("%s\n" % member)
