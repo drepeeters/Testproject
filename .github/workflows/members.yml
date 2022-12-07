@@ -23,6 +23,7 @@ jobs:
         with:
           commit_message: Update members
           file_pattern: contents/*
+          json: "true"
         
       - name: List all removed members
         run: |
