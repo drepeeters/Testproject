@@ -7,16 +7,17 @@ members_list = []
 for members in members_dir.glob('*.md'):
   print(str(members).split('/')[1])
   members_list.append(str(members).split('/')[1])
+  print("Loaded all the members currently in contents")
   
 print(members_list)
-print(members_dir.absolute())
 
-with open("day1.txt", 'w') as f:
-    for member in members_list:
-        print(member)
-        f.write(f"{member}\n")
+previous_members = []
+with open("day1.txt", 'r') as f:
+    for line in f:
+        previous_members.append(line.rstrip('\n'))
+    print("Previous list of members is loaded")
+ 
 
-#with open(os.path.join(str(members_dir.absolute()).rsplit('/', 1)[0], 'members_cache.txt'), 'w') as f:
-    #for member in members_list:
-        #print(member)
-        #f.write("%s\n" % member)
+print(members_list)
+print(previos_members)
+
