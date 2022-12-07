@@ -24,9 +24,9 @@ jobs:
           commit_message: Update members
           file_pattern: contents/*
         
-      - name: List all changed members
+      - name: List all removed members
         run: |
-          for member in ${{ steps.changed-members.outputs.all_changed_files }}; do
-            echo "$member was changed"
+          for member in ${{ steps.changed-members.outputs.removed }}; do
+            echo "$member was removed"
           done
 
