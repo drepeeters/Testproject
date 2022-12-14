@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-          path: /
+          path: "content/"
       - run: |
           # Use the `git diff` command to check for removed files
           git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep "content/"
