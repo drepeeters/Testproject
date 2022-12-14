@@ -1,0 +1,25 @@
+name: Check for removed files
+
+on: push
+
+jobs:
+  check-removed-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          path: /
+      - run: |
+          # Use the `git diff` command to check for removed files
+          git diff --name-only ${{ github.event.before }}..${{ github.event.after }} | grep "content/"
+
+          # If the output of the above command is not empty, it means that one or more files were removed
+          # Use the `set-output` action to set the output variable "removed_files"
+          if [ -n "$output" ]; then
+            echo "One or more files were removed"
+            set-output name=removed_files value=true
+          else
+            echo "No files were removed"
+            set-output name=removed_files value=false
+          fi
