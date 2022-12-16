@@ -20,10 +20,9 @@ jobs:
 
           # If the output of the above command is not empty, it means that one or more files were removed
           # Use the `set-output` action to set the output variable "removed_files"
-          if [ -n "$output" ]; then
+          if: [ -n "$output" ]
             echo "One or more files were removed"
             set-output name=removed_files value=true
-          else
+          if: ! [ -n "$output" ]
             echo "No files were removed"
             set-output name=removed_files value=false
-          fi
