@@ -26,7 +26,7 @@ jobs:
           done
       - uses: "finnp/create-file-action@master"
         env:
-              FILE_NAME: "dir/filename.txt"
+              FILE_NAME: "filename.txt"
               FILE_DATA: steps.removed-files.outputs
        
           
