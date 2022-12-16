@@ -20,8 +20,9 @@ jobs:
           # Use the `git diff` command to check for removed files
           git diff --name-only HEAD~1 HEAD~0 --diff-filter=D
 
+          touch files.txt
           for file in ${{ steps.removed-files.outputs }}; do
-            echo $file >> files.txt
+            echo "$file" >> ~/files.txt
           done
           
 
