@@ -1,1 +1,1 @@
-steps.removed-files.outputs
+echo Object
