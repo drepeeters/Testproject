@@ -4,7 +4,6 @@ on:
   push:
     paths:
        - "content/"
-  workflow_dispatch:
   
 jobs:
   check-removed-files:
