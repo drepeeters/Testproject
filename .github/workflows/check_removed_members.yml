@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - run: |
           # Use the `git diff` command to check for removed files
-          git diff --name-only --diff-filter='D' ${{ github.event.before }}..${{ github.event.after }} | grep content/
+          git diff --name-only --diff-filter='D' ${{ github.event.before }} ${{ github.event.after }} | grep content/
 
           # If the output of the above command is not empty, it means that one or more files were removed
           # Use the `set-output` action to set the output variable "removed_files"
