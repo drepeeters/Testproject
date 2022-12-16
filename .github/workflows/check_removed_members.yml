@@ -5,7 +5,7 @@ on:
   push:
     branches: [master]
     paths:
-      - "content/
+      - "content/"
 
 jobs:
   check-removed-files:
