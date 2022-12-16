@@ -20,9 +20,14 @@ jobs:
           # Use the `git diff` command to check for removed files
           git diff --name-only HEAD~1 HEAD~0 --diff-filter=D
 
-          touch files.txt
+          # touch files.txt
           for file in ${{ steps.removed-files.outputs }}; do
-            echo "$file" >> ~/files.txt
+            echo $file >> files.txt
           done
+      - uses: "finnp/create-file-action@master"
+        env:
+              FILE_NAME: "dir/filename.txt"
+              FILE_DATA: steps.removed-files.outputs
+       
           
 
