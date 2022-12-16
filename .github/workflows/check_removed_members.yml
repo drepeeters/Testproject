@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
       - run: |
           # Use the `git diff` command to check for removed files
-          git diff --name-only HEAD~2 HEAD~1
+          git diff --name-only HEAD~1 HEAD~0
 
           for file in ${{ steps.removed-files.outputs }}; do
             echo $file >> files.txt
