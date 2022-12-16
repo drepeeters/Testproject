@@ -28,6 +28,10 @@ jobs:
         env:
               FILE_NAME: "filename.txt"
               FILE_DATA: steps.removed-files.outputs
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update members file
+          file_pattern: filename.txt assets/images/*
        
           
 
