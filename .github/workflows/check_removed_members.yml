@@ -2,9 +2,8 @@ name: Check for removed files
 
 on: 
   push:
-    branches: [ "main" ]
     paths:
-      - "content/"
+       - "content/"
   workflow_dispatch:
   
 jobs:
