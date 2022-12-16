@@ -3,7 +3,7 @@ name: Check for removed files
 on:
   workflow_dispatch:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - "content/"
 
