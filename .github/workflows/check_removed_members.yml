@@ -22,12 +22,13 @@ jobs:
 
           # touch files.txt
           for file in ${{ steps.removed-files.outputs }}; do
-            echo $file >> files.txt
+            echo $file #>> files.txt
           done
       - uses: "finnp/create-file-action@master"
         env:
               FILE_NAME: "filename.txt"
-              FILE_DATA: ${{ steps.removed-files.outputs }}
+              FILE_DATA: echo ${{ steps.removed-files.outputs }}
+ 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update members file
