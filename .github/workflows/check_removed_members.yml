@@ -27,7 +27,7 @@ jobs:
       - uses: "finnp/create-file-action@master"
         env:
               FILE_NAME: "filename.txt"
-              FILE_DATA: steps.removed-files.outputs
+              FILE_DATA: ${{ steps.removed-files.outputs }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update members file
