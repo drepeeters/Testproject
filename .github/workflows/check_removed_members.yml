@@ -1,10 +1,12 @@
 name: Check for removed files
 
-on: 
+on:
+  workflow_dispatch:
   push:
+    branches: [master]
     paths:
-       - "content/"
-  
+      - "content/
+
 jobs:
   check-removed-files:
     runs-on: ubuntu-latest
