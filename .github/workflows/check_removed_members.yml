@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "contents/"
+      - "contents/**"
 
 jobs:
   check-removed-files:
