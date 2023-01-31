@@ -1,7 +1,7 @@
 import git
 import pymsteams
 import os
-from pathlib importr Path
+from pathlib import Path
 cwd = os.getcwd()
 print(cwd)
 
