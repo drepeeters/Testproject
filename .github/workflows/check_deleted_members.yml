@@ -23,7 +23,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install GitPython
         pip install pymsteams
-        pip install os
         pip install pathlib
 
     - name: Run Python script
