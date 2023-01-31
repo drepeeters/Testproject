@@ -1,4 +1,0 @@
-test-name.md
-dre-peeters.md
-test-name2.md
-test-name3.md
