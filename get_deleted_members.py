@@ -5,7 +5,7 @@ from pathlib import Path
 cwd = os.getcwd()
 print(cwd)
 
-content_path = Path(cwd+"/TestProject/")
+content_path = Path(cwd)
 
 repo = git.Repo(content_path)
 # myTeamsMessage = pymsteams.connectorcard("https://radboudumc.webhook.office.com/webhookb2/97a88c45-447f-4147-9e80-5e7c013f7501@b208fe69-471e-48c4-8d87-025e9b9a157f/IncomingWebhook/91295428cf8449f6a4a10aa8dc2f2e82/533f880f-0558-4b1f-9c63-1b76a1b4a439")
