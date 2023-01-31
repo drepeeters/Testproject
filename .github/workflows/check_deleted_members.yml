@@ -25,4 +25,4 @@ jobs:
         pip install pymsteams
 
     - name: Run Python script
-      run: python get_deleted_members.py
+      run: python ./get_deleted_members.py
