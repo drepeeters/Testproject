@@ -1,15 +1,15 @@
+name: Member removal notification
 on:
   push:
     paths:
       - '!*.md' # Change this to the file extension or name you want to track
 
 jobs:
-  notify-on-file-removal:
+  notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
       - name: Notify on file removal
+        if: ${{ github.event.head_commit.removed != '' }}
         uses: microsoft/teams-notify@v1
         with:
           webhook: ${{ secrets.TEAMS_CHANNEL_WEBHOOK_URL }}
@@ -21,5 +21,3 @@ jobs:
           activityTitle: 'GitHub'
           activitySubtitle: '${{ github.event.repository.name }}'
           activityText: 'File removal notification'
-        if: ${{ github.event.head_commit.removed && github.event.head_commit.removed | length > 0 }}
-    
