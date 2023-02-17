@@ -16,7 +16,7 @@ jobs:
           webhook: ${{ secrets.TEAMS_CHANNEL_WEBHOOK_URL }}
           title: 'File removed'
           message: 'A file has been removed in a commit.'
-          summary: "The following file has been removed: ${{ github.event.head_commit.removed | join(', ') }}"
+          summary: 'The following file has been removed: ${{ github.event.head_commit.removed }}'
           themeColor: '0072C6'
           activityImage: 'https://github.com/github.png'
           activityTitle: 'GitHub'
