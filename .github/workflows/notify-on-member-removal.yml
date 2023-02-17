@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:        
       - name: Notify dedicated teams channel
+        if: ${{ github.event.head_commit.removed != '' }}
         uses: jdcargile/ms-teams-notification@v1.3
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
