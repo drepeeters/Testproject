@@ -2,8 +2,7 @@ name: Member removal notification
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       -"contents/**.md"
 
@@ -16,5 +15,5 @@ jobs:
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.TEAMS_CHANNEL_WEBHOOK_URL }}
-          notification-summary: 'The following file has been removed: ${{ github.event.head_commit.removed | join(", ") }}'
+          notification-summary: 'Warning! A member file has been removed from '
           notification-color: 17a2b8
