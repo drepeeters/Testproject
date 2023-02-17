@@ -2,32 +2,19 @@ name: Member removal notification
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       -"contents/**.md"
 
 jobs:
   notify:
     runs-on: ubuntu-latest
-    steps:
-#       - name: Notify on file removal
-#         if: ${{ github.event.head_commit.removed != '' }}
-#         uses: microsoft/teams-notify@v1
-#         with:
-#           webhook: ${{ secrets.TEAMS_CHANNEL_WEBHOOK_URL }}
-#           title: 'File removed'
-#           message: 'A file has been removed in a commit.'
-#           summary: 'The following file has been removed: ${{ github.event.head_commit.removed }}'
-#           themeColor: '0072C6'
-#           activityImage: 'https://github.com/github.png'
-#           activityTitle: 'GitHub'
-#           activitySubtitle: '${{ github.event.repository.name }}'
-#           activityText: 'File removal notification'
-          
-          
+    steps:        
       - name: Notify dedicated teams channel
         uses: jdcargile/ms-teams-notification@v1.3
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.TEAMS_CHANNEL_WEBHOOK_URL }}
-          notification-summary: 'The following file has been removed: ${{ github.event.head_commit.removed }}'
+          notification-summary: 'The following file has been removed: ${{ github.event.head_commit.removed | join(", ") }}'
           notification-color: 17a2b8
