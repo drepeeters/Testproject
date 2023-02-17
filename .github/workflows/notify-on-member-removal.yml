@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      -"contents/**.md"
+      -"contents/**"
 
 jobs:
   notify:
@@ -15,5 +15,5 @@ jobs:
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.TEAMS_CHANNEL_WEBHOOK_URL }}
-          notification-summary: 'Warning! A member file has been removed from '
+          notification-summary: 'Warning! A member file has been removed. Contact someone from the Webteam and make sure the member is added back.'
           notification-color: 17a2b8
